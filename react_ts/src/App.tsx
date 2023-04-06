@@ -1,5 +1,11 @@
+import DragAndDrop from './solutions/DragAndDrop';
+
 function App() {
-  return <div className='App'></div>;
+  return (
+    <div>
+      <DragAndDrop />
+    </div>
+  );
 }
 
 export default App;

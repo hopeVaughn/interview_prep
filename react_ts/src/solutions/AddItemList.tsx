@@ -26,17 +26,29 @@ const AddItemList: React.FC = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className='w-full md:w-1/2 lg:w-1/3 mx-auto'>
+      <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
+        <label className='text-gray-700 font-semibold'>
           Add item:
-          <input type='text' value={text} onChange={handleTextChange} />
+          <input
+            type='text'
+            value={text}
+            onChange={handleTextChange}
+            className='border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
+          />
         </label>
-        <button type='submit'>Add</button>
+        <button
+          type='submit'
+          className='bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+        >
+          Add
+        </button>
       </form>
-      <ul>
+      <ul className='mt-4'>
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item} className='bg-gray-200 p-2 rounded-md my-2'>
+            {item}
+          </li>
         ))}
       </ul>
     </div>

@@ -1,6 +1,6 @@
 /*
 Problem:
-Write a React component that displays a timer that counts up from zero. The user should be able to start, pause, and reset the timer.
+Write a React component that displays a timer that counts up from zero. The user should be able to start, pause, reset, and restart the timer.
 
 Example:
 If the user starts the timer, waits for 3 seconds, pauses the timer, waits for 2 seconds,

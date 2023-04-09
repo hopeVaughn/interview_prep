@@ -11,7 +11,7 @@ We also conditionally render the start, pause, and reset buttons based on the is
 */
 import React, { useState, useRef } from 'react';
 
-const Timer: React.FC = () => {
+const CountUpTimer: React.FC = () => {
   const [time, setTime] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -26,7 +26,7 @@ const Timer: React.FC = () => {
   };
 
   const pauseTimer = () => {
-    setIsActive(true);
+    setIsActive(false);
     setIsPaused(true);
     if (intervalRef.current) {
       window.clearInterval(intervalRef.current);
@@ -43,18 +43,47 @@ const Timer: React.FC = () => {
   };
 
   return (
-    <div>
-      <p>
+    <div className='w-full md:w-1/2 lg:w-1/3 mx-auto'>
+      <p className='text-4xl md:text-6xl lg:text-7xl font-bold text-center'>
         {Math.floor(time / 60)
           .toString()
           .padStart(2, '0')}
         :{(time % 60).toString().padStart(2, '0')}
       </p>
-      {!isActive && !isPaused && <button onClick={startTimer}>Start</button>}
-      {isActive && !isPaused && <button onClick={pauseTimer}>Pause</button>}
-      {(isActive || isPaused) && <button onClick={resetTimer}>Reset</button>}
+      {!isActive && !isPaused && (
+        <button
+          className='bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 w-full md:w-auto mt-4 md:mt-8'
+          onClick={startTimer}
+        >
+          Start
+        </button>
+      )}
+      {isActive && !isPaused && (
+        <button
+          className='bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 w-full md:w-auto mt-4 md:mt-8'
+          onClick={pauseTimer}
+        >
+          Pause
+        </button>
+      )}
+      {(isActive || isPaused) && (
+        <button
+          className='bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 w-full md:w-auto mt-4 md:mt-8'
+          onClick={resetTimer}
+        >
+          Reset
+        </button>
+      )}
+      {isPaused && (
+        <button
+          className='bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 w-full md:w-auto mt-4 md:mt-8'
+          onClick={startTimer}
+        >
+          Restart
+        </button>
+      )}
     </div>
   );
 };
 
-export default Timer;
+export default CountUpTimer;

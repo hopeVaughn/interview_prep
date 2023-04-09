@@ -1,9 +1,9 @@
-import CountdownTimer from './solutions/CountdownTimer';
+import CountUpTimer from './solutions/CountUpTimer';
 
 function App() {
   return (
     <div>
-      <CountdownTimer startTime={10} />
+      <CountUpTimer />
     </div>
   );
 }

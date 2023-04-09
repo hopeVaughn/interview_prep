@@ -13,11 +13,28 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ message, onClose }) => {
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className='modal'>
-      <div className='modal-content'>
-        <p>{message}</p>
-        <button onClick={onClose}>Close</button>
+    <div className='fixed z-10 inset-0 overflow-y-auto'>
+      <div
+        className='flex items-center justify-center min-h-screen'
+        onClick={handleBackdropClick}
+      >
+        <div className='fixed inset-0 bg-black opacity-50'></div>
+        <div className='relative z-20 bg-white rounded-lg p-8 mx-4 sm:mx-0 max-w-md w-full'>
+          <p className='text-gray-800 text-lg mb-4'>{message}</p>
+          <button
+            className='bg-gray-800 text-white py-2 px-4 rounded'
+            onClick={onClose}
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -35,8 +52,13 @@ const HelloModalButton: React.FC = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleModalOpen}>Open Modal</button>
+    <div className='flex items-center justify-center'>
+      <button
+        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+        onClick={handleModalOpen}
+      >
+        Open Modal
+      </button>
       {isModalOpen && (
         <Modal message='Hello, world!' onClose={handleModalClose} />
       )}

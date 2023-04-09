@@ -1,8 +1,8 @@
-import FileUploadForm from './solutions/FileUploadForm';
+import HelloModalButton from './solutions/HelloModalButton';
 function App() {
   return (
     <div>
-      <FileUploadForm />
+      <HelloModalButton />
     </div>
   );
 }

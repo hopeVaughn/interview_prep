@@ -3,7 +3,11 @@ In this solution, we define a functional component called ItemList that takes an
 */
 import React, { useState } from 'react';
 
-const ItemList: React.FC<{ items: string[] }> = ({ items }) => {
+interface ItemListProps {
+  items: string[];
+}
+
+const ItemList: React.FC<ItemListProps> = ({ items }) => {
   const [query, setQuery] = useState('');
 
   const filteredItems = items.filter((item) =>

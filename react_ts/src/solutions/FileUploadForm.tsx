@@ -17,17 +17,23 @@ const FileUploadForm: React.FC = () => {
   };
 
   return (
-    <div>
-      <form>
-        <label>
-          Choose file:
-          <input type='file' onChange={handleFileChange} />
+    <div className='max-w-md mx-auto mt-10'>
+      <form className='flex flex-col items-center'>
+        <label className='w-full'>
+          <span className='text-gray-700 font-semibold'>Choose file:</span>
+          <input
+            type='file'
+            onChange={handleFileChange}
+            className='mt-2 border border-gray-300 p-2 rounded w-full'
+          />
         </label>
       </form>
       {file && (
-        <div>
-          <p>Name: {file.name}</p>
-          <p>Size: {Math.round((file.size / 1024 / 1024) * 100) / 100} MB</p>
+        <div className='mt-4 border border-gray-300 p-2 rounded'>
+          <p className='text-gray-700 font-semibold'>Name: {file.name}</p>
+          <p className='text-gray-700 font-semibold'>
+            Size: {Math.round((file.size / 1024 / 1024) * 100) / 100} MB
+          </p>
         </div>
       )}
     </div>

@@ -11,19 +11,22 @@ const ItemList: React.FC<{ items: string[] }> = ({ items }) => {
   );
 
   return (
-    <div>
+    <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
       <input
         type='text'
         placeholder='Search items'
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500'
       />
       {filteredItems.length === 0 ? (
-        <p>No matching items found</p>
+        <p className='mt-4 text-gray-600'>No matching items found</p>
       ) : (
-        <ul>
+        <ul className='mt-4 space-y-2'>
           {filteredItems.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item} className='p-2 bg-gray-100 rounded-md'>
+              {item}
+            </li>
           ))}
         </ul>
       )}

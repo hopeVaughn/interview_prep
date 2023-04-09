@@ -1,9 +1,9 @@
-import LoginForm from './solutions/LoginForm';
+import ToDoList from './solutions/ToDoList';
 
 function App() {
   return (
     <div>
-      <LoginForm />
+      <ToDoList />
     </div>
   );
 }

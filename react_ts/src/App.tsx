@@ -1,9 +1,8 @@
-import AddItemList from './solutions/AddItemList';
-
+import ButtonList from './solutions/ButtonList';
 function App() {
   return (
     <div>
-      <AddItemList />
+      <ButtonList strings={['apple', 'banana', 'orange']} />
     </div>
   );
 }

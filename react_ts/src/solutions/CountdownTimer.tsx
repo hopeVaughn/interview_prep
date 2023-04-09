@@ -16,7 +16,15 @@ const CountdownTimer: React.FC<{ startTime: number }> = ({ startTime }) => {
     return () => clearInterval(intervalId);
   }, []);
 
-  return <div>{time > 0 ? <h1>{time}</h1> : <h1>Time's up!</h1>}</div>;
+  return (
+    <div className='w-full md:w-1/2 lg:w-1/3 mx-auto flex flex-col items-center mt-16'>
+      <div className='bg-gray-200 rounded-full w-36 h-36 flex items-center justify-center'>
+        <h1 className='text-4xl text-center'>
+          {time > 0 ? time : "Time's up!"}
+        </h1>
+      </div>
+    </div>
+  );
 };
 
 export default CountdownTimer;

@@ -1,8 +1,9 @@
-import ButtonList from './solutions/ButtonList';
+import CountdownTimer from './solutions/CountdownTimer';
+
 function App() {
   return (
     <div>
-      <ButtonList strings={['apple', 'banana', 'orange']} />
+      <CountdownTimer startTime={10} />
     </div>
   );
 }

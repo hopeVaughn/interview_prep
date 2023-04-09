@@ -1,6 +1,4 @@
 /*
-Sure, here's a small coding exercise that involves React and TypeScript:
-
 Problem:
 Write a React component that displays a countdown timer that starts at a given number of seconds and counts down to zero. When the timer reaches zero, the component should display a message.
 

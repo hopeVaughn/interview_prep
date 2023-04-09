@@ -1,5 +1,5 @@
 /*
-In this solution, we define a functional component called ItemList that contains two state variables, items and text. We use the useState hook to update these state variables when the user enters text into the form and submits it.
+In this solution, we define a functional component called AddItemList that contains two state variables, items and text. We use the useState hook to update these state variables when the user enters text into the form and submits it.
 
 We define a handleTextChange function that is called when the user types into the form. Inside the function, we update the text state variable to reflect the new input.
 

@@ -1,9 +1,9 @@
-import DragAndDrop from './solutions/DragAndDrop';
+import AddItemList from './solutions/AddItemList';
 
 function App() {
   return (
     <div>
-      <DragAndDrop />
+      <AddItemList />
     </div>
   );
 }

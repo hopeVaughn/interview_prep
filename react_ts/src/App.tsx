@@ -1,10 +1,15 @@
-import CountUpTimer from './solutions/CountUpTimer';
+import React from 'react';
+import DragAndDrop from './solutions/DragAndDrop';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 function App() {
   return (
-    <div>
-      <CountUpTimer />
-    </div>
+    <DndProvider backend={HTML5Backend}>
+      <div>
+        <DragAndDrop />
+      </div>
+    </DndProvider>
   );
 }
 

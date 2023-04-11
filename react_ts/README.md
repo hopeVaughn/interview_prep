@@ -268,7 +268,7 @@ const email = getProperty(myObject, 'email'); // email is of type string
 const invalid = getProperty(myObject, 'invalid'); // TypeScript error: Argument of type 'invalid' is not assignable to parameter of type 'keyof { name: string; age: number; email: string; }'
 ```
 
-In this example, we're defining a function called getProperty that takes in an object obj and a key key, and returns the value of the specified key from the object. We're using the keyof operator to ensure that the key argument is a valid key of the obj object.
+In this example, we're defining a function called getProperty that takes in an object obj and a key, and returns the value of the specified key from the object. We're using the keyof operator to ensure that the key argument is a valid key of the obj object.
 
 This provides more type safety and helps catch errors at compile-time. If we were to pass in an invalid key, TypeScript would give us a compile-time error, which helps improve code quality.
 

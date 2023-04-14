@@ -1,5 +1,14 @@
+// import React from "react";
+// import LoginForm from "./solutions/LoginForm";
+// import CountdownTimer from "./solutions/CountdownTimer";
+// import BodyCardWrap from "./solutions/BodyCardWrap";
 function App() {
-  return <div></div>;
+  let startTime: number = 100;
+  return <div>
+    {/* <LoginForm />
+    <CountdownTimer startTime={startTime} />
+    <BodyCardWrap /> */}
+  </div>;
 }
 
 export default App;
